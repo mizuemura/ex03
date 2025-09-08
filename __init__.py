@@ -13,3 +13,8 @@ async def ping():
 @app.get("/greet/{name}")
 async def greet(name: str):
     return {"message": f"Hello, {name}!"}
+
+@app.get("/time")
+async def time():
+    from datetime import datetime
+    return {"time": datetime.now().isoformat()}
